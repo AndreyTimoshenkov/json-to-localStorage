@@ -7,11 +7,8 @@
     <label tuiLabel="Type a text"><h2>Введите JSON:</h2></label>
     <tui-textarea
       class="textField"
-      formControlName="JSON"
-      [rows]="20"
+      formControlName="input"
       [expandable]="true"
-      [tuiTextfieldLabelOutside]="true"
-      placeholder="Please enter the data"
       [tuiTextfieldIcon]="icon"
       [tuiTextfieldCleaner]="true"
     ></tui-textarea>
@@ -19,7 +16,8 @@
       tuiButton
       class="saveBtn"
       icon="tuiIconSaveLarge"
-      appearance="secondary-destructive"
+      appearance="primary"
+      (click)="onSaveClick()"
     >
       Сохранить
     </button>

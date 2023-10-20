@@ -15,9 +15,18 @@ import { TuiButtonModule, TuiModeModule, TuiSvgModule, TuiTextfieldControllerMod
 })
 export class DataComponent {
   JSONform = new FormGroup({
-    JSON: new FormControl(''),
+    input: new FormControl(''),
   });
 
-  // saveData(click)
+  
 
+  // data = JSON.stringify(this.JSONform.value);
+
+  onSaveClick() {
+    const value = this.JSONform?.get("input")?.value;
+    console.log(value)
+    // localStorage.setItem('key', this.JSONform.get("input").value);
+  }
+  constructor() {
+  }
 }
