@@ -2,3 +2,13 @@
   display: flex;
   justify-content: space-around;
 }
+
+tui-tabs {
+  font-size: 35px;
+  font-weight: 600;
+  /* color: var(--tui-link); */
+}
+
+/* tui-tabs:active {
+  color: var(--tui-link-hover);
+} */
