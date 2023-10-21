@@ -10,11 +10,14 @@ import { DataComponent } from '../data/data.component';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
-  value:string;
-  data:JSON;
+  // value = JSON.stringify(localStorage.getItem('key'));
+  // data: JSON | null  = JSON.parse(localStorage.getItem('key'));
+
+  // request = fetch(localStorage['key'))
+  // .then((response) => response.json())
+  // .then((data) => {});
 
   constructor() {
-    this.value = JSON.stringify(localStorage.getItem('key'));
-    this.data = JSON.parse(this.value);
+    // this.data = JSON.parse(this.value);
   }
 }

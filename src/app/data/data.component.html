@@ -2,35 +2,24 @@
   <ng-template #icon>
     <tui-svg src="../../assets/was-ist-json_600x250px-1.svg"></tui-svg>
   </ng-template>
-
-  <!-- [formGroup]="JSONform" -->
-
-  <form>
-    <label tuiLabel="Type a text"><h2>Введите JSON:</h2></label>
-    <tui-textarea
-      class="b-form"
-      [(ngModel)]="value"
-      [ngModelOptions]="{ standalone: true }"
-      class="textField"
-      [expandable]="true"
-      [tuiTextfieldIcon]="icon"
-      [tuiTextfieldCleaner]="true"
-    >
-      <textarea
-        placeholder="Please input the JSON data"
-        tuiTextfield
-      ></textarea>
-    </tui-textarea>
-    <button
-      tuiButton
-      class="saveBtn"
-      icon="tuiIconSaveLarge"
-      appearance="primary"
-      (click)="onSaveClick(value)"
-    >
-      <!--  -->
-      Сохранить
-    </button>
-  </form>
+  <label tuiLabel="Type a text"><h2>Введите JSON:</h2></label>
+  <tui-textarea
+    class="b-form"
+    [(ngModel)]="value"
+    class="textField"
+    [expandable]="true"
+    [tuiTextfieldIcon]="icon"
+    [tuiTextfieldCleaner]="true"
+  >
+    <textarea placeholder="Please input the JSON data" tuiTextfield></textarea>
+  </tui-textarea>
+  <button
+    tuiButton
+    class="saveBtn"
+    icon="tuiIconSaveLarge"
+    appearance="primary"
+    (click)="onSaveClick(value)"
+  >
+    Сохранить
+  </button>
 </div>
-<!-- (click)="saveData($event)" -->
