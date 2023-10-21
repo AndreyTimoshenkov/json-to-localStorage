@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiTextareaModule } from '@taiga-ui/kit';
-import { FormControl, FormGroup} from '@angular/forms';
 import { TuiButtonModule, TuiModeModule, TuiSvgModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 
 @Component({
@@ -13,20 +12,15 @@ import { TuiButtonModule, TuiModeModule, TuiSvgModule, TuiTextfieldControllerMod
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css']
 })
+
 export class DataComponent {
-  JSONform = new FormGroup({
-    input: new FormControl(''),
-  });
 
-  
+  value: string;
 
-  // data = JSON.stringify(this.JSONform.value);
-
-  onSaveClick() {
-    const value = this.JSONform?.get("input")?.value;
-    console.log(value)
-    // localStorage.setItem('key', this.JSONform.get("input").value);
+  onSaveClick(value:string) {
+    localStorage.setItem('key', value);
   }
   constructor() {
+    this.value = '';
   }
 }
