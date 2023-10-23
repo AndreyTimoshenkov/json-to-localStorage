@@ -7,6 +7,7 @@ import { normaliseDate } from './project-details/normaliseDate';
 import { ProjectInterface } from './project-details/project-interface';
 import { ProjectListComponent } from './project-list/project-list.component';
 
+
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -18,17 +19,23 @@ export class ProjectsComponent {
   normaliseDate = normaliseDate;
   value: string | null;
   data;
-  projects: [];
+  projects: ProjectInterface[];
 
-  project: ProjectInterface = {
-      "id": "1",
-      "subject": "Проект 1",
-      "description": "Проект интернет-платформы для рынка лизинга",
-      "createdBy": "Александр Иванов",
-      "startDate": "2021-09-24T09:00:00",
-      "endDate": "2021-10-24T09:00:00",
-      "cost": 120000.5
+  // project: ProjectInterface = {
+  //     "id": "1",
+  //     "subject": "Проект 1",
+  //     "description": "Проект интернет-платформы для рынка лизинга",
+  //     "createdBy": "Александр Иванов",
+  //     "startDate": "2021-09-24T09:00:00",
+  //     "endDate": "2021-10-24T09:00:00",
+  //     "cost": 120000.5
+  //   }
+
+    clickHandler(project: {}) {
+      // this.router.navigate(['/projects', this.project.id])
+      console.log(project)
     }
+  
 
   constructor() {
     this.value = (localStorage.getItem('key'));

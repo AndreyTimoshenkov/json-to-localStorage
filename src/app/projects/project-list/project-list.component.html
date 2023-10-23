@@ -1,7 +1,6 @@
-<!-- <section class="wrapper"> -->
-
-<nav tuiTabs vertical="left" class="left">
-  <button tuiTab routerLink="/projects/:id" routerLinkActive>
+<nav class="content">
+  <!-- routerLink="['/projects', project.id]" -->
+  <a tuiTab routerLinkActive="_active" vertical="left" class="left">
     <div class="btn">
       <p class="auxText">
         {{ project.startDate | date : "mediumDate" }} -
@@ -10,7 +9,5 @@
       <p class="mainText">{{ project.subject }}</p>
       <p class="auxText2">{{ project.createdBy }}</p>
     </div>
-  </button>
+  </a>
 </nav>
-<!-- </section> -->
-<!-- (click)="clickHandler($event)" -->

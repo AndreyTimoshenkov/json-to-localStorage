@@ -5,13 +5,14 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 
 const routes: Routes = [
-  { path: 'data', component: DataComponent, title: 'Data'},
+  { path: 'data', pathMatch: 'full', component: DataComponent, title: 'Data'},
   { path: 'projects', component: ProjectsComponent, title: 'Projects'},
   {
     path: 'projects/:id',
     component: ProjectDetailsComponent,
     title: 'Project details'
-  }
+  },
+  {path: '**', component: DataComponent, title: 'Data'}
 ];
 
 @NgModule({

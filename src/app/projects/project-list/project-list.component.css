@@ -10,7 +10,9 @@
 
 .content {
   display: flex;
+  /* flex-direction: column; */
   margin: 0.5rem 0 0 2rem;
+  overflow: auto;
 }
 
 .left {
@@ -39,8 +41,18 @@
   font-size: 20px;
 }
 
+.btn {
+  display: flex;
+  flex-direction: column;
+}
+
 p,
 div {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+a {
+  margin: 10px;
+  margin-bottom: 50px;
 }
