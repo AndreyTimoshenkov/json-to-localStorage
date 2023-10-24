@@ -1,6 +1,5 @@
-<nav tuiTabs class="content">
-  <!-- routerLink="['/projects', project.id]" -->
-  <a tuiTab routerLinkActive="_active" vertical="left" class="left">
+<tui-tabs class="content">
+  <button tuiTab class="btn">
     <div class="btn">
       <p class="auxText">
         {{ project.startDate | date : "mediumDate" }} -
@@ -9,5 +8,10 @@
       <p class="mainText">{{ project.subject }}</p>
       <p class="auxText2">{{ project.createdBy }}</p>
     </div>
-  </a>
-</nav>
+  </button>
+</tui-tabs>
+<!-- routerLinkActive -->
+<!-- vertical="left" -->
+<!-- [(activeItemIndex)]="activeItemIndex" -->
+<!-- routerLink="['/projects', project.id]" -->
+<!-- (click)="onClick('Maps')" -->

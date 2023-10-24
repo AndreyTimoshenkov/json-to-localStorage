@@ -1,8 +1,6 @@
 .wrapper {
   margin: 0px 50px 0px 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: left;
   font-family: Manrope;
   min-width: 800px;
   color: var(--tui-text-02);
@@ -10,32 +8,22 @@
 
 .content {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   margin: 0.5rem 0 0 2rem;
-  overflow: auto;
-}
-
-.left {
-  margin-right: 2rem;
-  min-width: 10rem;
-  /* width: 10rem; */
-}
-
-.right {
-  margin-left: 2rem;
-  min-width: 10rem;
-  /* width: 10rem; */
 }
 
 .auxText {
+  text-align: start;
   color: var(--tui-text-02);
-  font-size: 0.6em;
+  font-size: 0.7em;
+  line-height: 1.5em;
 }
 
 .auxText2 {
-  color: var(--tui-text-02);
-  font-size: 0.6em;
   text-align: end;
+  color: var(--tui-text-02);
+  font-size: 0.7em;
+  line-height: 1.5em;
 }
 .mainText {
   font-size: 20px;
@@ -44,15 +32,11 @@
 .btn {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 p,
 div {
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-a {
-  margin: 10px;
-  margin-bottom: 50px;
 }
