@@ -20,26 +20,20 @@ export class ProjectsComponent {
   value: string | null;
   data;
   projects: ProjectInterface[];
+  project: ProjectInterface
+  //  = this.projects[0];
 
-  // project: ProjectInterface = {
-  //     "id": "1",
-  //     "subject": "Проект 1",
-  //     "description": "Проект интернет-платформы для рынка лизинга",
-  //     "createdBy": "Александр Иванов",
-  //     "startDate": "2021-09-24T09:00:00",
-  //     "endDate": "2021-10-24T09:00:00",
-  //     "cost": 120000.5
-  //   }
-
-    clickHandler(project: {}) {
-      // this.router.navigate(['/projects', this.project.id])
-      console.log(project)
-    }
-  
+  clickHandler(project: ProjectInterface) {
+    // this.router.navigate(['/projects', this.project.id])
+    this.project = project;
+    console.log(project);
+    return project;
+  }
 
   constructor() {
     this.value = (localStorage.getItem('key'));
     this.data = JSON.parse(this.value || '');
     this.projects = this.data.Projects;
+    this.project = this.projects[0];
   }
 }

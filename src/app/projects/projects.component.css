@@ -1,8 +1,8 @@
 .wrapper {
   margin: 20px 50px;
   display: flex;
-  flex-direction: column;
-  justify-content: left;
+  /* flex-direction: column; */
+  justify-content: space-between;
   font-family: Manrope;
   min-width: 800px;
   color: var(--tui-text-02);
@@ -16,13 +16,18 @@
 .left {
   margin-right: 2rem;
   min-width: 10rem;
-  /* width: 10rem; */
+  max-width: fit-content;
+}
+
+.content _underline {
+  height: fit-content;
 }
 
 .right {
-  margin-left: 2rem;
+  margin: auto;
+  /* margin-left: 2rem; */
   min-width: 10rem;
-  /* width: 10rem; */
+  max-width: fit-content;
 }
 
 .auxText {

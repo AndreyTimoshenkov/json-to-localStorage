@@ -1,1 +1,27 @@
-<p>{{ project }}</p>
+<p class="title">{{ project.subject }}</p>
+<div class="row">
+  <!-- *ngIf="project?.startDate" -->
+  <div class="column">
+    <div>Дата начала</div>
+    <div class="value">{{ project.startDate | date : "mediumDate" }}</div>
+  </div>
+  <div class="column">
+    <div>Дата окончания</div>
+    <div class="value">{{ project.endDate | date : "mediumDate" }}</div>
+  </div>
+  <div class="column">
+    <div>Автор</div>
+    <div class="value">{{ project.createdBy }}</div>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <div>Описание</div>
+    <div class="value">{{ project.description }}</div>
+  </div>
+</div>
+<div class="btn">
+  <button tuiButton icon="tuiIconEditLarge" (click)="onEditClick($event)">
+    Изменить
+  </button>
+</div>

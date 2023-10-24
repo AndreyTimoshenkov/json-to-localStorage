@@ -1,9 +1,14 @@
-<app-project-list
-  *ngFor="let project of projects"
-  [project]="project"
-  (click)="clickHandler(project)"
-></app-project-list>
-<!-- <app-project-details
-  *ngFor="let project of projects"
-  [project]="project"
-></app-project-details> -->
+<section class="wrapper">
+  <section class="left" *ngIf="project">
+    <app-project-list
+      *ngFor="let project of projects"
+      [project]="project"
+      (click)="clickHandler(project)"
+    ></app-project-list>
+  </section>
+  <section class="right" *ngIf="project">
+    <app-project-details [project]="project"></app-project-details>
+  </section>
+</section>
+
+<!-- *ngIf="project.startDate" -->

@@ -21,10 +21,10 @@ export class ProjectListComponent {
 
   route: ActivatedRoute = inject(ActivatedRoute);
   router: Router = inject(Router);
-    projectid = -1;
+  projectid = -1;
     
     constructor() {
-      // this.projectid = Number(this.route.snapshot.params['id']);
+      this.projectid = Number(this.route.snapshot.params['id']);
   }  
 
 }
