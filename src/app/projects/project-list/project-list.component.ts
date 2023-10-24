@@ -2,7 +2,7 @@ import { Component, Inject, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectInterface } from '../project-details/project-interface';
 import { TuiTabsModule } from '@taiga-ui/kit';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TuiAlertService } from '@taiga-ui/core';
 
 @Component({
@@ -23,18 +23,9 @@ export class ProjectListComponent {
 
   @Input () project!: ProjectInterface;
 
-  route: ActivatedRoute = inject(ActivatedRoute);
+  // route: ActivatedRoute = inject(ActivatedRoute);
   router: Router = inject(Router);
   projectid = -1;
-
-  constructor(
-    @Inject(TuiAlertService)
-    private readonly alerts: TuiAlertService,
-) {}
-
-onClick(item: string): void {
-    this.alerts.open(item).subscribe();
-}
     
   //   constructor() {
   //     this.projectid = Number(this.route.snapshot.params['id']);
