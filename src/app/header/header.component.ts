@@ -14,10 +14,10 @@ import { AppRoutingModule } from '../app-routing.module';
 export class HeaderComponent {
   activeItemIndex = 0;
 
-  onTabClick(index: number): void {
-    this.activeItemIndex = index - 1;
-    console.log(this.activeItemIndex);
-}
+//   onTabClick(index: number): void {
+//     this.activeItemIndex = index - 1;
+//     console.log(this.activeItemIndex);
+// }
 
 }
 

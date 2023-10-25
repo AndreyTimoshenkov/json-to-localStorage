@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectInterface } from '../project-details/project-interface';
 import { TuiTabsModule } from '@taiga-ui/kit';
 import { Router, RouterLink } from '@angular/router';
-// import { TuiAlertService } from '@taiga-ui/core';
-// import { normaliseDate } from '../project-details/normaliseDate';
-import { NormaliseDatePipe } from '../normalise-date.pipe';
+import { NormaliseDatePipe } from '../../normaliseDatePipe/normalise-date.pipe';
 
 @Component({
   selector: 'app-project-list',

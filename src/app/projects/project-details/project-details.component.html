@@ -1,47 +1,49 @@
-<p class="title">{{ project.subject }}</p>
-<div class="row">
-  <!-- *ngIf="project?.startDate" -->
-  <div class="column">
-    <div>Дата начала</div>
-    <div class="value">
-      {{ project.startDate | normaliseDate }}
+<form>
+  <p class="title">{{ project.subject }}</p>
+  <div class="row">
+    <div class="column">
+      <div>Дата начала</div>
+      <div class="value">
+        {{ project.startDate | normaliseDate }}
+      </div>
+    </div>
+    <div class="column">
+      <div>Дата окончания</div>
+      <div class="value">
+        {{ project.endDate | normaliseDate }}
+      </div>
+    </div>
+    <div class="column">
+      <div>Автор</div>
+      <div class="value">{{ project.createdBy }}</div>
     </div>
   </div>
-  <div class="column">
-    <div>Дата окончания</div>
-    <div class="value">
-      {{ project.endDate | normaliseDate }}
+  <div class="row">
+    <div class="column">
+      <div>Описание</div>
+      <div class="value">{{ project.description }}</div>
     </div>
   </div>
-  <div class="column">
-    <div>Автор</div>
-    <div class="value">{{ project.createdBy }}</div>
+
+  <div class="btn">
+    <button
+      *ngIf="!editability"
+      tuiButton
+      appearance="primary"
+      icon="tuiIconEditLarge"
+      (click)="onEditClick()"
+    >
+      Изменить
+    </button>
+    <button
+      *ngIf="editability"
+      tuiButton
+      appearance="accent"
+      icon="tuiIconSaveLarge"
+      type="submit"
+      (click)="onSaveClick(project)"
+    >
+      Сохранить
+    </button>
   </div>
-</div>
-<div class="row">
-  <div class="column">
-    <div>Описание</div>
-    <div class="value">{{ project.description }}</div>
-  </div>
-</div>
-<div class="btn">
-  <button
-    *ngIf="!editability"
-    tuiButton
-    appearance="primary"
-    icon="tuiIconEditLarge"
-    (click)="onEditClick()"
-    [disabled]="false"
-  >
-    Изменить
-  </button>
-  <button
-    *ngIf="editability"
-    tuiButton
-    appearance="accent"
-    icon="tuiIconSaveLarge"
-    (click)="onSaveClick()"
-  >
-    Сохранить
-  </button>
-</div>
+</form>

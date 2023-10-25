@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DataComponent } from '../data/data.component';
 import { TuiTabsModule}  from '@taiga-ui/kit';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-import { normaliseDate } from './project-details/normaliseDate';
 import { ProjectInterface } from './project-details/project-interface';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { StorageService } from '../storageService/storage.service';
 
 
 @Component({
@@ -16,24 +16,16 @@ import { ProjectListComponent } from './project-list/project-list.component';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
-  normaliseDate = normaliseDate;
-  value: string | null;
-  data;
-  projects: ProjectInterface[];
-  project: ProjectInterface
-  //  = this.projects[0];
+  projects: ProjectInterface[] = this.localStore.getAllItems();
+  project: ProjectInterface;
+
 
   clickHandler(project: ProjectInterface) {
     // this.router.navigate(['/projects', this.project.id])
     this.project = project;
-    console.log(project);
-    return project;
   }
 
-  constructor() {
-    this.value = (localStorage.getItem('key'));
-    this.data = JSON.parse(this.value || '');
-    this.projects = this.data.Projects;
+  constructor(private localStore: StorageService) {
     this.project = this.projects[0];
   }
 }

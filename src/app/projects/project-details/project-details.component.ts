@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectInterface } from './project-interface';
 import { TuiButtonModule } from '@taiga-ui/core';
-import { NormaliseDatePipe } from '../normalise-date.pipe';
+import { NormaliseDatePipe } from '../../normaliseDatePipe/normalise-date.pipe';
 
 
 @Component({
@@ -15,28 +15,28 @@ import { NormaliseDatePipe } from '../normalise-date.pipe';
 export class ProjectDetailsComponent {
 
   @Input() project!: ProjectInterface;
+  @Input() projects!: ProjectInterface[];
 
   editability = false;
 
   onEditClick() {
     this.editability = true;
-    const elements = document.getElementsByClassName('value')
+    const elements = document.getElementsByClassName("value")
     for(let i = 0; i < elements.length; i++) {
       elements[i].setAttribute("contenteditable", "true");
-      elements[i].setAttribute("tabindex", String(i + 1));
     }
-    elements[0].setAttribute("autofocus", "true");
+    // elements[0].setAttribute("focus", "true");
   }
 
-  onSaveClick() {
+  onSaveClick(project: {}) {
     this.editability = false;
-    const elements = document.getElementsByClassName('value')
+    const elements = document.getElementsByClassName("value")
     for(let i = 0; i < elements.length; i++) {
       elements[i].setAttribute("contenteditable", "false")
     }
+    console.log(project);
   }
 
   constructor() {
     }
-
 }
