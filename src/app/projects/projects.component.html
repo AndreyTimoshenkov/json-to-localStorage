@@ -1,10 +1,13 @@
 <section class="wrapper">
-  <section class="left" *ngIf="project">
-    <app-project-list
-      *ngFor="let project of projects"
-      [project]="project"
-      (click)="clickHandler(project)"
-    ></app-project-list>
+  <section class="left">
+    <tui-tabs class="tabs" vertical="left">
+      <app-project-list
+        tuiTabs
+        *ngFor="let project of projects"
+        [project]="project"
+        (click)="clickHandler(project)"
+      ></app-project-list>
+    </tui-tabs>
   </section>
   <section class="right" *ngIf="project">
     <app-project-details [project]="project"></app-project-details>

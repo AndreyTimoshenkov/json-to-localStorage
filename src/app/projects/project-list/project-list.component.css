@@ -6,11 +6,11 @@
   color: var(--tui-text-02);
 }
 
-.content {
+/* .content {
   display: flex;
   flex-direction: column;
   margin: 0.5rem 0 0 2rem;
-}
+} */
 
 .auxText {
   text-align: start;
@@ -24,6 +24,7 @@
   color: var(--tui-text-02);
   font-size: 0.7em;
   line-height: 1.5em;
+  padding-right: 20px;
 }
 .mainText {
   font-size: 20px;
@@ -33,6 +34,8 @@
   font-family: Manrope;
   display: flex;
   flex-direction: column;
+  width: 210px;
+  height: 60px;
   /* justify-content: space-around; */
 }
 

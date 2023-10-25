@@ -1,35 +1,42 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { normaliseDate } from './normaliseDate'
 import { ProjectInterface } from './project-interface';
 import { TuiButtonModule } from '@taiga-ui/core';
+import { NormaliseDatePipe } from '../normalise-date.pipe';
+
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [CommonModule, TuiButtonModule],
+  imports: [CommonModule, TuiButtonModule, NormaliseDatePipe],
   templateUrl: './project-details.component.html',
   styleUrls: ['./project-details.component.css']
 })
 export class ProjectDetailsComponent {
 
-  normaliseDate = normaliseDate;
-
   @Input() project!: ProjectInterface;
 
-  onEditClick(event: Event) {
-    console.log(event)
+  editability = false;
+
+  onEditClick() {
+    this.editability = true;
+    const elements = document.getElementsByClassName('value')
+    for(let i = 0; i < elements.length; i++) {
+      elements[i].setAttribute("contenteditable", "true");
+      elements[i].setAttribute("tabindex", String(i + 1));
+    }
+    elements[0].setAttribute("autofocus", "true");
   }
 
-  // startDate:string
-  // endDate:string 
-
-  // = this.project.startDate || '';
-  // = this.project.endDate || '';
+  onSaveClick() {
+    this.editability = false;
+    const elements = document.getElementsByClassName('value')
+    for(let i = 0; i < elements.length; i++) {
+      elements[i].setAttribute("contenteditable", "false")
+    }
+  }
 
   constructor() {
-    // this.startDate = normaliseDate(this.project.startDate);
-    // this.endDate = normaliseDate(this.project.endDate);
     }
 
 }

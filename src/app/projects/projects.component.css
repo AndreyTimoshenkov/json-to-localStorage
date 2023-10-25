@@ -1,31 +1,27 @@
 .wrapper {
   margin: 20px 50px;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   font-family: Manrope;
   min-width: 800px;
   color: var(--tui-text-02);
 }
 
-.content {
-  display: flex;
-  margin: 2rem 0;
-}
-
 .left {
+  display: flex;
+  flex-direction: column;
   margin-right: 2rem;
-  min-width: 10rem;
   max-width: fit-content;
 }
 
-.content _underline {
+.tabs {
+  display: flex;
+  flex-direction: column;
   height: fit-content;
 }
 
 .right {
   margin: auto;
-  /* margin-left: 2rem; */
   min-width: 10rem;
   max-width: fit-content;
 }

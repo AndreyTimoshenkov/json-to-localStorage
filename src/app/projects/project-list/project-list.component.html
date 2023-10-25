@@ -1,15 +1,14 @@
-<tui-tabs class="content">
-  <button tuiTab class="btn">
-    <div class="btn">
-      <p class="auxText">
-        {{ project.startDate | date : "mediumDate" }} -
-        {{ project.endDate | date : "mediumDate" }}
-      </p>
-      <p class="mainText">{{ project.subject }}</p>
-      <p class="auxText2">{{ project.createdBy }}</p>
-    </div>
-  </button>
-</tui-tabs>
+<button tuiTab class="btn">
+  <div class="btn">
+    <p class="auxText">
+      {{ project.startDate | normaliseDate }} -
+      {{ project.endDate | normaliseDate }}
+    </p>
+    <p class="mainText">{{ project.subject }}</p>
+    <p class="auxText2">{{ project.createdBy }}</p>
+  </div>
+</button>
+
 <!-- routerLinkActive -->
 <!-- vertical="left" -->
 <!-- [(activeItemIndex)]="activeItemIndex" -->
