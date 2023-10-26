@@ -8,8 +8,6 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { StorageService } from '../storageService/storage.service';
 import { ActivatedRoute } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -26,6 +24,7 @@ export class ProjectsComponent implements OnInit{
   clickHandler(id: string) {
     this.currentProject = this.projects.find((item: ProjectInterface) => { 
     return item.id === id});
+    // console.log(this.currentProject)
     // this.router.navigate(['/projects', this.project.id])
 
   }
@@ -44,7 +43,8 @@ export class ProjectsComponent implements OnInit{
       this.projectid = 1;
     } 
     this.currentProject = this.projects.find(item => { 
-      return  +item.id == +this.projectid})   
+      return  +item.id == +this.projectid})
+
     this.activeItemIndex = this.projectid - 1;
-  }
+  };
 }

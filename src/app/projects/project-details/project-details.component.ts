@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectInterface } from './project-interface';
 import { TuiButtonModule } from '@taiga-ui/core';
@@ -16,25 +16,21 @@ import { TuiInputModule } from '@taiga-ui/kit';
   templateUrl: './project-details.component.html',
   styleUrls: ['./project-details.component.css']
 })
-export class ProjectDetailsComponent {
+export class ProjectDetailsComponent implements OnChanges {
 
   @Input() project!: ProjectInterface | undefined;
   @Input() projects!: ProjectInterface[];
   // @Input() currentProject!: ProjectInterface
 
-  projectForm = new FormGroup({
-    subject: new FormControl(),
-    startDate: new FormControl(),
-    endDate: new FormControl(),
-    createdBy: new FormControl(),
-    description: new FormControl(),
-  });
 
+  projectForm!: FormGroup;
   editability = false;
 
   onEditClick() {
     this.editability = true;
-    this.projectForm.enable()
+    this.projectForm.enable();
+    console.log(this.project?.subject)
+    
     // this.projectForm.disable()
     // const elements = document.getElementsByClassName("value")
     // for(let i = 0; i < elements.length; i++) {
@@ -55,8 +51,25 @@ export class ProjectDetailsComponent {
   }
 
   constructor(private localStore: StorageService) {
-    if (!this.editability) {
+  
+}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (typeof this.projectForm === 'undefined') {
+      this.projectForm = new FormGroup({
+        subject: new FormControl(),
+        startDate: new FormControl(),
+        endDate: new FormControl(),
+        createdBy: new FormControl(),
+        description: new FormControl()
+      });
       this.projectForm.disable()
     }
+    if (typeof changes['project'].currentValue !== 'undefined') {
+      const {subject, startDate, endDate, createdBy, description} = changes['project'].currentValue;
+      this.projectForm.setValue({subject, startDate, endDate, createdBy, description})
     }
+  }
 }
+
+

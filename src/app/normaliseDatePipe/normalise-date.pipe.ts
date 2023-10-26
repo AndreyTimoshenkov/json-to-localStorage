@@ -6,7 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NormaliseDatePipe implements PipeTransform {
 
-  transform(date: string): string {
+  transform(date?: string): string {
+    if (typeof date === 'undefined') {
+      return '';
+    };
+    
     let months:{[char: number]: string} = {
       1 : 'января', 
       2 : 'февраля', 
@@ -20,12 +24,13 @@ export class NormaliseDatePipe implements PipeTransform {
       10 : 'октября', 
       11 : 'ноября', 
       12 : 'декабря'
-  }
-  let year:string = date.slice(0, 4)
-  let month:number = Number(date.slice(5, 7))
-  let monthString:string = months[month];
-  let day = date.slice(8, 10)
-  return (day +' '+ monthString +' '+ year);
-  }
+    };
 
+    let year:string = date.slice(0, 4);
+    let month:number = Number(date.slice(5, 7));
+    let monthString:string = months[month];
+    let day = date.slice(8, 10);
+    
+    return (day +' '+ monthString +' '+ year);
+  } 
 }

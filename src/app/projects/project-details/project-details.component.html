@@ -1,72 +1,81 @@
-<form [formGroup]="projectForm">
-  <tui-input formControlName="subject">
-    {{ project?.subject }}
-    <input tuiTextfield />
-  </tui-input>
-  <tui-input formControlName="startDate">
-    Type a text
-    <input tuiTextfield />
-  </tui-input>
-  <tui-input formControlName="endDate">
-    Type a text
-    <input tuiTextfield />
-  </tui-input>
-  <tui-input formControlName="createdBy">
-    Type a text
-    <input tuiTextfield />
-  </tui-input>
-  <tui-input formControlName="description">
-    Type a text
-    <input tuiTextfield />
-  </tui-input>
+<form [formGroup]="projectForm" *ngIf="editability">
+  <div class="input-row">
+    <tui-input formControlName="subject">
+      Название проекта
+      <input tuiTextfield />
+    </tui-input>
+  </div>
+  <div class="input-row">
+    <tui-input formControlName="startDate">
+      Дата начала
+      <input tuiTextfield />
+    </tui-input>
+  </div>
+  <div class="input-row">
+    <tui-input formControlName="endDate">
+      Дата окончания
+      <input tuiTextfield />
+    </tui-input>
+  </div>
+  <div class="input-row">
+    <tui-input formControlName="createdBy">
+      Автор
+      <input tuiTextfield />
+    </tui-input>
+  </div>
+  <div class="input-row">
+    <tui-input formControlName="description">
+      Описание
+      <input tuiTextfield />
+    </tui-input>
+  </div>
+  <div class="btn">
+    <button
+      tuiButton
+      appearance="accent"
+      icon="tuiIconSaveLarge"
+      type="submit"
+      (click)="onSaveClick(project)"
+    >
+      Сохранить
+    </button>
+  </div>
 </form>
 
-<!-- <form>
-  <p class="value, title">{{ project.subject }}</p>
+<section *ngIf="!editability">
+  <p class="title">{{ project?.subject }}</p>
   <div class="row">
     <div class="column">
       <div>Дата начала</div>
       <div class="value">
-        {{ project.startDate | normaliseDate }}
+        {{ project?.startDate | normaliseDate }}
       </div>
     </div>
     <div class="column">
       <div>Дата окончания</div>
       <div class="value">
-        {{ project.endDate | normaliseDate }}
+        {{ project?.endDate | normaliseDate }}
       </div>
     </div>
     <div class="column">
       <div>Автор</div>
-      <div class="value">{{ project.createdBy }}</div>
+      <div class="value">{{ project?.createdBy }}</div>
     </div>
   </div>
   <div class="row">
     <div class="column">
       <div>Описание</div>
-      <div class="value">{{ project.description }}</div>
+      <div class="value">{{ project?.description }}</div>
     </div>
-  </div> 
-</form>-->
-
-<div class="btn">
-  <button
-    *ngIf="!editability"
-    tuiButton
-    appearance="primary"
-    icon="tuiIconEditLarge"
-    (click)="onEditClick()"
-  >
-    Изменить
-  </button>
-  <button
-    *ngIf="editability"
-    tuiButton
-    appearance="accent"
-    icon="tuiIconSaveLarge"
-    type="submit"
-    (click)="onSaveClick(project)"
-  >
-    Сохранить
-  </button>
-</div>
+  </div>
+  <div class="btn">
+    <button
+      tuiButton
+      appearance="primary"
+      icon="tuiIconEditLarge"
+      (click)="onEditClick()"
+    >
+      Изменить
+    </button>
+  </div>
+</section>

@@ -10,12 +10,20 @@
 .row {
   display: flex;
   flex-direction: row;
-  text-align: start;
-  margin: 10 px 30px;
+  justify-content: space-between;
+  margin: 10px 30px;
 }
 
 .column {
   margin: 10px 20px;
+}
+
+.input-row {
+  margin: 10px;
+  min-width: 400px;
+  width: 100%;
+  flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .value {
@@ -25,12 +33,5 @@
 .btn {
   margin-top: 20px;
   text-align: center;
-}
-
-button {
   margin-right: 20px;
-}
-
-[contenteditable="true"] {
-  caret-color: var(--tui-negative);
 }
