@@ -13,22 +13,12 @@ import { NormaliseDatePipe } from '../../normaliseDatePipe/normalise-date.pipe';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent {
-
-  activeItemIndex = 0;
-  
-  clickHandler($event: any) {
-    // this.router.navigate(['/projects', this.project.id])
-    console.log($event.target)
-  }
-
-  @Input () project!: ProjectInterface;
-
-  // route: ActivatedRoute = inject(ActivatedRoute);
   router: Router = inject(Router);
   projectid = -1;
-    
-  //   constructor() {
-  //     this.projectid = Number(this.route.snapshot.params['id']);
-  // }  
 
+  @Input () project!: ProjectInterface;
+  
 }
+
+
+

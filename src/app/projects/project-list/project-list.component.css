@@ -6,12 +6,6 @@
   color: var(--tui-text-02);
 }
 
-/* .content {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem 0 0 2rem;
-} */
-
 .auxText {
   text-align: start;
   color: var(--tui-text-02);
@@ -36,7 +30,6 @@
   flex-direction: column;
   width: 210px;
   height: 60px;
-  /* justify-content: space-around; */
 }
 
 p,

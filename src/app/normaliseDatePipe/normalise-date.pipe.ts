@@ -26,9 +26,9 @@ export class NormaliseDatePipe implements PipeTransform {
       12 : 'декабря'
     };
 
-    let year:string = date.slice(0, 4);
-    let month:number = Number(date.slice(5, 7));
-    let monthString:string = months[month];
+    let year = date.slice(0, 4);
+    let month = Number(date.slice(5, 7));
+    let monthString = months[month];
     let day = date.slice(8, 10);
     
     return (day +' '+ monthString +' '+ year);
