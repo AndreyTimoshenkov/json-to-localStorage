@@ -1,5 +1,28 @@
-<form>
-  <p class="title">{{ project.subject }}</p>
+<form [formGroup]="projectForm">
+  <tui-input formControlName="subject">
+    {{ project?.subject }}
+    <input tuiTextfield />
+  </tui-input>
+  <tui-input formControlName="startDate">
+    Type a text
+    <input tuiTextfield />
+  </tui-input>
+  <tui-input formControlName="endDate">
+    Type a text
+    <input tuiTextfield />
+  </tui-input>
+  <tui-input formControlName="createdBy">
+    Type a text
+    <input tuiTextfield />
+  </tui-input>
+  <tui-input formControlName="description">
+    Type a text
+    <input tuiTextfield />
+  </tui-input>
+</form>
+
+<!-- <form>
+  <p class="value, title">{{ project.subject }}</p>
   <div class="row">
     <div class="column">
       <div>Дата начала</div>
@@ -23,27 +46,27 @@
       <div>Описание</div>
       <div class="value">{{ project.description }}</div>
     </div>
-  </div>
+  </div> 
+</form>-->
 
-  <div class="btn">
-    <button
-      *ngIf="!editability"
-      tuiButton
-      appearance="primary"
-      icon="tuiIconEditLarge"
-      (click)="onEditClick()"
-    >
-      Изменить
-    </button>
-    <button
-      *ngIf="editability"
-      tuiButton
-      appearance="accent"
-      icon="tuiIconSaveLarge"
-      type="submit"
-      (click)="onSaveClick(project)"
-    >
-      Сохранить
-    </button>
-  </div>
-</form>
+<div class="btn">
+  <button
+    *ngIf="!editability"
+    tuiButton
+    appearance="primary"
+    icon="tuiIconEditLarge"
+    (click)="onEditClick()"
+  >
+    Изменить
+  </button>
+  <button
+    *ngIf="editability"
+    tuiButton
+    appearance="accent"
+    icon="tuiIconSaveLarge"
+    type="submit"
+    (click)="onSaveClick(project)"
+  >
+    Сохранить
+  </button>
+</div>

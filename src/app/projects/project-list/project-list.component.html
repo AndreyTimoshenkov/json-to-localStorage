@@ -1,4 +1,4 @@
-<button tuiTab class="btn">
+<button tuiTab class="btn" routerLink="/projects/{{ project.id }}">
   <div class="btn">
     <p class="auxText">
       {{ project.startDate | normaliseDate }} -
@@ -8,9 +8,3 @@
     <p class="auxText2">{{ project.createdBy }}</p>
   </div>
 </button>
-
-<!-- routerLinkActive -->
-<!-- vertical="left" -->
-<!-- [(activeItemIndex)]="activeItemIndex" -->
-<!-- routerLink="['/projects', project.id]" -->
-<!-- (click)="onClick('Maps')" -->

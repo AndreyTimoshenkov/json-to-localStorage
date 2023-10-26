@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent, title: 'Projects'},
   {
     path: 'projects/:id',
-    component: ProjectDetailsComponent,
+    component: ProjectsComponent,
     title: 'Project details'
   },
   {path: '**', component: DataComponent, title: 'Data'}

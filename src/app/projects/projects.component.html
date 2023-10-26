@@ -1,16 +1,20 @@
 <section class="wrapper">
   <section class="left">
-    <tui-tabs class="tabs" vertical="left">
+    <tui-tabs
+      class="tabs"
+      vertical="left"
+      [(activeItemIndex)]="activeItemIndex"
+    >
       <app-project-list
         tuiTabs
         *ngFor="let project of projects"
         [project]="project"
-        (click)="clickHandler(project)"
+        (click)="clickHandler(project.id)"
       ></app-project-list>
     </tui-tabs>
   </section>
   <section class="right">
-    <app-project-details [project]="project"></app-project-details>
+    <app-project-details [project]="currentProject"></app-project-details>
   </section>
 </section>
 
