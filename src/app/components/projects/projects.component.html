@@ -1,4 +1,6 @@
-<section class="wrapper">
+<app-error *ngIf="!currentProject"></app-error>
+
+<section class="wrapper" *ngIf="currentProject">
   <section class="left">
     <tui-tabs
       class="tabs"
@@ -17,5 +19,3 @@
     <app-project-details [project]="currentProject"></app-project-details>
   </section>
 </section>
-
-<!-- *ngIf="project" -->

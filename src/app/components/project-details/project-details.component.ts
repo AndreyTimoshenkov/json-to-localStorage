@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectInterface } from './project-interface';
+import { ProjectInterface } from '../../interfaces/project-interface';
 import { TuiButtonModule } from '@taiga-ui/core';
-import { NormaliseDatePipe } from '../../normaliseDatePipe/normalise-date.pipe';
-import { StorageService } from 'src/app/storageService/storage.service';
+import { NormaliseDatePipe } from '../../normalise-date-pipe/normalise-date.pipe';
+import { StorageService } from 'src/app/storage-service/storage.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TuiInputModule } from '@taiga-ui/kit';
 

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiTextareaModule } from '@taiga-ui/kit';
 import { TuiButtonModule, TuiSvgModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { Router, RouterLink } from '@angular/router';
-import { StorageService } from '../storageService/storage.service';
+import { StorageService } from '../../storage-service/storage.service';
 
 @Component({
   selector: 'app-data',

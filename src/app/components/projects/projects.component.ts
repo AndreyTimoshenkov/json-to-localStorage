@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataComponent } from '../data/data.component';
+import { DataComponent } from '../data-uploading/data.component';
 import { TuiTabsModule}  from '@taiga-ui/kit';
-import { ProjectDetailsComponent } from './project-details/project-details.component';
-import { ProjectInterface } from './project-details/project-interface';
-import { ProjectListComponent } from './project-list/project-list.component';
-import { StorageService } from '../storageService/storage.service';
+import { ProjectDetailsComponent } from '../project-details/project-details.component';
+import { ProjectInterface } from '../../interfaces/project-interface';
+import { ProjectListComponent } from '../project-list/project-list.component';
+import { StorageService } from '../../storage-service/storage.service';
 import { ActivatedRoute } from '@angular/router';
+import { ErrorComponent } from '../error/error.component'
+
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, DataComponent, TuiTabsModule, ProjectDetailsComponent, ProjectListComponent],
+  imports: [CommonModule, DataComponent, TuiTabsModule, ProjectDetailsComponent, ProjectListComponent, ErrorComponent],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
@@ -22,6 +24,7 @@ export class ProjectsComponent implements OnInit{
   currentProject: ProjectInterface | undefined;
   activeItemIndex = 0;
   projectId: number = -1;
+  // error: boolean = true;
 
   constructor(private localStore: StorageService, private route: ActivatedRoute) {
     let data = localStore.getData(String(this.projectId)) 

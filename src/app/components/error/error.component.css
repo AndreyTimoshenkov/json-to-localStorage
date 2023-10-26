@@ -1,0 +1,8 @@
+tui-error {
+  margin: 50px;
+  background-color: var(--tui-error-bg);
+  font-size: 35px;
+  line-height: 50px;
+  text-align: center;
+  padding: 50px;
+}
