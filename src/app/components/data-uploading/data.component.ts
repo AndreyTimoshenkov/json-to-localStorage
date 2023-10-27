@@ -22,6 +22,10 @@ export class DataComponent {
   router: Router = inject(Router);
 
   onSaveClick(value:string) {
+    if (!value) {
+      alert('Вероятно, вы пытаетесь сохранить пустой объект. Пожалуйста, попробуйте еще раз.')
+      return;
+    }
     let projects = (JSON.parse(value)).Projects;
     for (let project of projects) {
       this.localStore.saveData(project.id, JSON.stringify(project));
